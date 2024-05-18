@@ -15,14 +15,16 @@ class LIFEISBEAUTIFUL_API ALifeIsBeautifulGameState : public AGameState
 	GENERATED_BODY()
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Game Time", meta = (AllowPrivateAccess = "true"))
-	FGameTimeStruct CurrentTime;
+	FGameTimeStruct CurrentTime = FGameTimeStruct();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Game Time", meta = (AllowPrivateAccess = "true"))
 	float TimeDilation = 1.0f;
 
+public:
+	ALifeIsBeautifulGameState();
+
 	virtual void Tick(float DeltaTime) override;
 
-public:
 	UPROPERTY(BlueprintAssignable, Category = "Game Time")
 	FOnMinuteChanged OnMinuteChanged;
 

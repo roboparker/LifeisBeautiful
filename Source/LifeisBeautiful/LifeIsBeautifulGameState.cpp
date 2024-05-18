@@ -1,5 +1,10 @@
 ﻿#include "LifeIsBeautifulGameState.h"
 
+ALifeIsBeautifulGameState::ALifeIsBeautifulGameState()
+{
+	PrimaryActorTick.bCanEverTick = true;
+}
+
 void ALifeIsBeautifulGameState::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
