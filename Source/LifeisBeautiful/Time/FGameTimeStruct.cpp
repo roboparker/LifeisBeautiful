@@ -2,7 +2,7 @@
 
 void FGameTimeStruct::AddSeconds(float Seconds)
 {
-	Second += Second;
+	Second += Seconds;
 	Normalize();
 }
 
