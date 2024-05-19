@@ -2,7 +2,7 @@
 
 #include "Components/DirectionalLightComponent.h"
 #include "Kismet/GameplayStatics.h"
-#include "../LifeisBeautifulGameState.h"
+#include "LifeisBeautiful/Game/LifeIsBeautifulGameState.h"
 
 ATimeBasedDirectionalLight::ATimeBasedDirectionalLight()
 {

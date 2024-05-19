@@ -5,7 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "Logging/LogMacros.h"
-#include "LifeisBeautifulCharacter.generated.h"
+#include "LifeIsBeautifulCharacter.generated.h"
 
 class USpringArmComponent;
 class UCameraComponent;
@@ -16,7 +16,7 @@ struct FInputActionValue;
 DECLARE_LOG_CATEGORY_EXTERN(LogTemplateCharacter, Log, All);
 
 UCLASS(config=Game)
-class ALifeisBeautifulCharacter : public ACharacter
+class ALifeIsBeautifulCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
@@ -27,7 +27,7 @@ class ALifeisBeautifulCharacter : public ACharacter
 	UCameraComponent* FollowCamera;
 
 public:
-	ALifeisBeautifulCharacter();
+	ALifeIsBeautifulCharacter();
 
 	UFUNCTION(BlueprintCallable, Category = "Character")
 	void Move(const FVector2D& Value);

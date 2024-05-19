@@ -2,7 +2,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameState.h"
-#include "Time/FGameTimeStruct.h"
+#include "LifeisBeautiful/Time/FGameTimeStruct.h"
 #include "LifeIsBeautifulGameState.generated.h"
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnMinuteChanged, FGameTimeStruct, CurrentTime);

@@ -1,6 +1,6 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
-#include "LifeisBeautifulCharacter.h"
+#include "LifeIsBeautifulCharacter.h"
 #include "Engine/LocalPlayer.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
@@ -16,7 +16,7 @@ DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 //////////////////////////////////////////////////////////////////////////
 // ALifeisBeautifulCharacter
 
-ALifeisBeautifulCharacter::ALifeisBeautifulCharacter()
+ALifeIsBeautifulCharacter::ALifeIsBeautifulCharacter()
 {
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
@@ -54,13 +54,13 @@ ALifeisBeautifulCharacter::ALifeisBeautifulCharacter()
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
 }
 
-void ALifeisBeautifulCharacter::BeginPlay()
+void ALifeIsBeautifulCharacter::BeginPlay()
 {
 	// Call the base class  
 	Super::BeginPlay();
 }
 
-void ALifeisBeautifulCharacter::Move(const FVector2D& Value)
+void ALifeIsBeautifulCharacter::Move(const FVector2D& Value)
 {
 	if (Controller != nullptr)
 	{
@@ -80,7 +80,7 @@ void ALifeisBeautifulCharacter::Move(const FVector2D& Value)
 	}
 }
 
-void ALifeisBeautifulCharacter::Look(const FVector2D& Value)
+void ALifeIsBeautifulCharacter::Look(const FVector2D& Value)
 {
 	if (Controller != nullptr)
 	{
