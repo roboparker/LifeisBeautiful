@@ -21,8 +21,10 @@ public:
 
 	ALifeIsBeautifulGameMode();
 
+	UFUNCTION(BlueprintCallable, Category = "Game")
 	void PauseGame() const;
 
+	UFUNCTION(BlueprintCallable, Category = "Game")
 	void ResumeGame() const;
 };
 
