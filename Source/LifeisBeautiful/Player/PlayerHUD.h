@@ -11,9 +11,9 @@ class LIFEISBEAUTIFUL_API UPlayerHUD : public UCommonUserWidget
 	GENERATED_BODY()
 
 public:
-	UFUNCTION(BlueprintImplementableEvent, Category = "Widgets")
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Widgets")
 	void PushWidget(TSubclassOf<UCommonActivatableWidget> WidgetClass);
 
-	UFUNCTION(BlueprintImplementableEvent, Category = "Widgets")
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Widgets")
 	void PopWidget();
 };
