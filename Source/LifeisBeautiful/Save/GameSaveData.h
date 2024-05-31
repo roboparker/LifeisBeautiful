@@ -2,6 +2,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/SaveGame.h"
+#include "LifeisBeautiful/Time/FGameTimeStruct.h"
 #include "GameSaveData.generated.h"
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnSaveGameComplete);
@@ -11,6 +12,9 @@ UCLASS(Blueprintable)
 class LIFEISBEAUTIFUL_API UGameSaveData : public USaveGame
 {
 	GENERATED_BODY()
+
+	UPROPERTY(BlueprintReadWrite, Category = "Save Data", meta = (AllowPrivateAccess="true"))
+	FGameTimeStruct GameTime;
 
 	UPROPERTY(BlueprintReadWrite, Category = "Save Data", meta = (AllowPrivateAccess="true"))
 	FString SlotName;
