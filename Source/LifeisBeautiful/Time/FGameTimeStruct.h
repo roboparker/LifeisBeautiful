@@ -12,22 +12,22 @@ struct FGameTimeStruct
 	GENERATED_BODY()
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Game Time")
-	int32 Year;
+	int32 Year = 1;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Game Time")
-	int Season;
+	int Season = 1;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Game Time")
-	int Day;	
+	int Day = 1;	
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Game Time")
-	int Hour;
+	int Hour = 0;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Game Time")
-	int Minute;
+	int Minute = 0;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Game Time")
-	float Second;
+	float Second = 0.0f;
 
 	void AddSeconds(float Seconds);
 
