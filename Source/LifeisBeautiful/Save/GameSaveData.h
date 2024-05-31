@@ -7,6 +7,7 @@
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnSaveGameComplete);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FOnLoadGameComplete, USaveGame*, LoadedGameData);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnSaveGameDeleted);
 
 UCLASS(Blueprintable)
 class LIFEISBEAUTIFUL_API UGameSaveData : public USaveGame
@@ -29,6 +30,9 @@ public:
 	UPROPERTY(BlueprintAssignable, Category = "Save Data")
 	FOnLoadGameComplete OnLoadGameComplete;
 
+	UPROPERTY(BlueprintAssignable, Category = "Save Data")
+	FOnSaveGameDeleted OnSaveGameDeleted;
+
 	UGameSaveData();
 	
 	UFUNCTION(BlueprintCallable, Category = "Game")
@@ -36,4 +40,7 @@ public:
 
 	UFUNCTION(BlueprintCallable, Category = "Game")
 	void LoadGame() const;
+
+	UFUNCTION(BlueprintCallable, Category = "Game")
+	void DeleteGame() const;
 };

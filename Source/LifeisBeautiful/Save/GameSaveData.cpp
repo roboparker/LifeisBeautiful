@@ -49,3 +49,17 @@ void UGameSaveData::LoadGame() const
 
 	UGameplayStatics::AsyncLoadGameFromSlot(SlotName, UserIndex, LoadedDelegate);
 }
+
+void UGameSaveData::DeleteGame() const
+{
+	if (UGameplayStatics::DoesSaveGameExist(SlotName, UserIndex))
+	{
+		UGameplayStatics::DeleteGameInSlot(SlotName, UserIndex);
+		UE_LOG(LogTemp, Log, TEXT("Game save data deleted successfully"));
+		OnSaveGameDeleted.Broadcast();
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("No save data found to delete"));
+	}
+}
