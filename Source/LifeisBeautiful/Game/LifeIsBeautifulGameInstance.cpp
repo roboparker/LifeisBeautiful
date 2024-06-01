@@ -6,8 +6,15 @@ void ULifeIsBeautifulGameInstance::Init()
 {
 	Super::Init();
 
-	GameSaveData = NewObject<UGameSaveData>(this, GameSaveDataClass);
+	if(!GameSaveDataClass)
+	{
+		UE_LOG(LogTemp, Error, TEXT("GameSaveDataClass is nullptr"));
 
+		return;
+	}
+	
+	GameSaveData = NewObject<UGameSaveData>(this, GameSaveDataClass);
+	
 	if (!GameSaveData)
 		UE_LOG(LogTemp, Error, TEXT("Failed to create GameSaveData"));
 }
