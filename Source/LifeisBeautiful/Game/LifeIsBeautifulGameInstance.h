@@ -37,7 +37,7 @@ public:
 	void SaveGame() const;
 
 	UFUNCTION(BlueprintCallable, Category = "Save Data")
-	void LoadGame() const;
+	void LoadGame();
 
 	UFUNCTION(BlueprintCallable, Category = "Save Data")
 	void DeleteGame() const;

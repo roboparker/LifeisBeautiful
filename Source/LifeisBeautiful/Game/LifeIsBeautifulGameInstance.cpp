@@ -42,7 +42,7 @@ void ULifeIsBeautifulGameInstance::SaveGame() const
 	UGameplayStatics::AsyncSaveGameToSlot (GameSaveData, GameSaveData->GetSlotName(), GameSaveData->GetUserIndex(), SavedDelegate);
 }
 
-void ULifeIsBeautifulGameInstance::LoadGame() const
+void ULifeIsBeautifulGameInstance::LoadGame()
 {
 	if(!UGameplayStatics::DoesSaveGameExist(GameSaveData->GetSlotName(), GameSaveData->GetUserIndex()))
 	{
@@ -64,6 +64,16 @@ void ULifeIsBeautifulGameInstance::LoadGame() const
 		}
 
 		UE_LOG(LogTemp, Log, TEXT("Game loaded successfully"));
+		GameSaveData = Cast<UGameSaveData>(LoadedGameData);
+
+		if (!GameSaveData)
+		{
+			FFrame::KismetExecutionMessage(TEXT("Failed to cast loaded game data"), ELogVerbosity::Error);
+			UE_LOG(LogTemp, Error, TEXT("Failed to cast loaded game data"));
+
+			return;
+		}
+
 		OnLoadGameComplete.Broadcast(Cast<UGameSaveData>(LoadedGameData));
 	});
 
