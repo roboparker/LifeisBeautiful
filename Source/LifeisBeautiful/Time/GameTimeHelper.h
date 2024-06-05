@@ -52,4 +52,22 @@ public:
 	{
 		return Time + Seconds;
 	}
+
+	UFUNCTION(BlueprintPure, Category = "Game Time")
+	static FString GetSeasonOfYearAsString(const FGameTimeStruct& Time)
+	{
+		UEnum* EnumPtr = FindObject<UEnum>(ANY_PACKAGE, TEXT("ESeasons"), true);
+		if (!EnumPtr) return FString("Invalid");
+
+		return EnumPtr->GetNameStringByIndex(static_cast<int32>(Time.GetSeasonOfYear()));
+	}
+
+	UFUNCTION(BlueprintPure, Category = "Game Time")
+	static FString GetDayOfWeekAsString(const FGameTimeStruct& Time)
+	{
+		UEnum* EnumPtr = FindObject<UEnum>(ANY_PACKAGE, TEXT("EDays"), true);
+		if (!EnumPtr) return FString("Invalid");
+
+		return EnumPtr->GetNameStringByIndex(static_cast<int32>(Time.GetDayOfWeek()));
+	}
 };
