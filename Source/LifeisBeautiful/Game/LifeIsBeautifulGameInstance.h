@@ -22,6 +22,8 @@ class LIFEISBEAUTIFUL_API ULifeIsBeautifulGameInstance : public UGameInstance
 	UGameSaveData* GameSaveData;
 
 public:
+	virtual void Init() override;
+
 	UPROPERTY(BlueprintAssignable, Category = "Save Data")
 	FOnSaveGameComplete OnSaveGameComplete;
 
