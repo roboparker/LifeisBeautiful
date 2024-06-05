@@ -36,7 +36,7 @@ void ULifeIsBeautifulGameInstance::SaveGame() const
 		}
 
 		UE_LOG(LogTemp, Log, TEXT("Game saved successfully"));
-		GameSaveData->OnSaveGameComplete.Broadcast();
+		OnSaveGameComplete.Broadcast();
 	});
 
 	UGameplayStatics::AsyncSaveGameToSlot (GameSaveData, GameSaveData->GetSlotName(), GameSaveData->GetUserIndex(), SavedDelegate);
@@ -64,7 +64,7 @@ void ULifeIsBeautifulGameInstance::LoadGame() const
 		}
 
 		UE_LOG(LogTemp, Log, TEXT("Game loaded successfully"));
-		GameSaveData->OnLoadGameComplete.Broadcast(LoadedGameData);
+		OnLoadGameComplete.Broadcast(Cast<UGameSaveData>(LoadedGameData));
 	});
 
 	UGameplayStatics::AsyncLoadGameFromSlot(GameSaveData->GetSlotName(), GameSaveData->GetUserIndex(), LoadedDelegate);
@@ -82,5 +82,5 @@ void ULifeIsBeautifulGameInstance::DeleteGame() const
 
 	UGameplayStatics::DeleteGameInSlot(GameSaveData->GetSlotName(), GameSaveData->GetUserIndex());
 	UE_LOG(LogTemp, Log, TEXT("Game save data deleted successfully"));
-	GameSaveData->OnSaveGameDeleted.Broadcast();
+	OnSaveGameDeleted.Broadcast();
 }
