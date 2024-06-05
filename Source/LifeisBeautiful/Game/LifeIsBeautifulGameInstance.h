@@ -19,4 +19,13 @@ class LIFEISBEAUTIFUL_API ULifeIsBeautifulGameInstance : public UGameInstance
 
 public:
 	virtual void Init() override;
+
+	UFUNCTION(BlueprintCallable, Category = "Save Data")
+	void SaveGame() const;
+
+	UFUNCTION(BlueprintCallable, Category = "Save Data")
+	void LoadGame() const;
+
+	UFUNCTION(BlueprintCallable, Category = "Save Data")
+	void DeleteGame() const;
 };

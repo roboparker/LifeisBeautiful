@@ -18,10 +18,10 @@ class LIFEISBEAUTIFUL_API UGameSaveData : public USaveGame
 	FGameTimeStruct GameTime;
 
 	UPROPERTY(BlueprintReadWrite, Category = "Save Data", meta = (AllowPrivateAccess="true"))
-	FString SlotName;
+	FString SlotName = "Slot0";
 
 	UPROPERTY(BlueprintReadWrite, Category = "Save Data", meta = (AllowPrivateAccess="true"))
-	int32 UserIndex;
+	int32 UserIndex = 0;
 
 public:
 	UPROPERTY(BlueprintAssignable, Category = "Save Data")
@@ -33,14 +33,7 @@ public:
 	UPROPERTY(BlueprintAssignable, Category = "Save Data")
 	FOnSaveGameDeleted OnSaveGameDeleted;
 
-	UGameSaveData();
-	
-	UFUNCTION(BlueprintCallable, Category = "Game")
-	void SaveGame() const;
+	FString GetSlotName() const { return SlotName; }
 
-	UFUNCTION(BlueprintCallable, Category = "Game")
-	void LoadGame() const;
-
-	UFUNCTION(BlueprintCallable, Category = "Game")
-	void DeleteGame() const;
+	int32 GetUserIndex() const { return UserIndex; }
 };
